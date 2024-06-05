@@ -25,5 +25,5 @@ The web application allows users to perform various actions, such as logging in,
 - `auth.py`: Handles user authentication-related routes and functions.
 - `templates/`: Directory containing HTML templates for rendering web pages.
 - `static/`: Directory containing static assets such as CSS, JavaScript, and image files.
-- `README.md`: This file, containing project description, technologies used, and file descriptions.
+
 
