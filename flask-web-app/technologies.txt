@@ -1,0 +1,37 @@
+Web Technologies:
+
+1. Flask:
+Description: Flask is a lightweight and flexible web framework for Python. It provides tools, libraries, and patterns to help developers build web applications quickly and efficiently.
+Usage in the Application: Flask is used as the primary web framework to handle HTTP requests, route URLs to appropriate view functions, render templates, and manage application configuration.
+
+2. Jinja2 Templates:
+Description: Jinja2 is a modern and designer-friendly templating engine for Python, inspired by Django's template system. It allows developers to generate dynamic HTML content by embedding Python code within HTML templates.
+Usage in the Application: Jinja2 templates are used to generate HTML content dynamically. Templates are rendered with data passed from the Flask application, allowing for the creation of dynamic web pages.
+
+3. Bootstrap:
+Description: Bootstrap is a popular open-source toolkit for developing responsive and mobile-first websites. It provides pre-designed CSS and JavaScript components, such as buttons, forms, navigation bars, and more, to streamline web development and ensure consistency in design.
+Usage in the Application: Bootstrap CSS is included in the application to leverage its styling and layout capabilities, making the web application visually appealing and responsive across different devices and screen sizes.
+
+4. jQuery:
+Description: jQuery is a fast, small, and feature-rich JavaScript library. It simplifies HTML document traversing, event handling, animating, and AJAX interactions for rapid web development.
+Usage in the Application: jQuery is included in the application to handle client-side interactions, such as form submissions, DOM manipulation, and AJAX requests. It enhances the user experience by providing dynamic and interactive elements on web pages.
+
+Database Technologies:
+1. SQLite:
+Description: SQLite is a lightweight and self-contained relational database management system (RDBMS). It requires minimal configuration and setup, making it suitable for small to medium-sized web applications.
+Usage in the Application: SQLite is used as the database management system to store application data. It provides a simple and efficient way to persist user information, session data, and other application-related data.
+
+2. SQLAlchemy:
+Description: SQLAlchemy is an open-source SQL toolkit and Object-Relational Mapping (ORM) library for Python. It simplifies database interactions by providing a high-level abstraction layer over SQL databases, allowing developers to work with database entities as Python objects.
+Usage in the Application: SQLAlchemy is used to interact with the SQLite database in the Flask application. It provides an ORM for defining database models, querying data, and performing database operations using Python code.
+
+3. Flask-SQLAlchemy:
+Description: Flask-SQLAlchemy is a Flask extension that integrates SQLAlchemy with Flask applications. It simplifies the configuration and usage of SQLAlchemy within Flask applications, providing utilities for database initialization, session management, and model definition.
+Usage in the Application: Flask-SQLAlchemy is used to integrate SQLAlchemy with the Flask application. It provides a centralized way to configure and manage the database connection, define database models, and perform database operations within the Flask application.
+These technologies work together to power the web application, providing a robust and scalable architecture for building dynamic web applications with a relational database backend.
+
+
+
+
+
+

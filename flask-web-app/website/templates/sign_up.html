@@ -1,0 +1,75 @@
+<!-- Extends the base.html template -->
+{% extends "base.html" %}
+
+<!-- Block to define the title of the page -->
+{% block title %}Sign up{% endblock %}
+
+<!-- Block to define the content of the page -->
+{% block content %}
+    <!-- Form for user sign-up with POST method -->
+    <form method="POST">
+        <!-- Header for the form, aligned to the center -->
+        <h3 align="center">Sign Up</h3>
+        
+        <!-- Form group for the email input -->
+        <div class="form-group">
+            <!-- Label for the email input field -->
+            <label for="email">Email Address</label>
+            <!-- Input field for the email address -->
+            <input
+                type="email" 
+                class="form-control" 
+                id="email" 
+                name="email"
+                placeholder="Enter email"
+            />
+        </div>
+
+        <!-- Form group for the first name input -->
+        <div class="form-group">
+            <!-- Label for the first name input field -->
+            <label for="firstName">First Name</label>
+            <!-- Input field for the first name -->
+            <input
+                type="text" 
+                class="form-control" 
+                id="firstName" 
+                name="firstName"
+                placeholder="Enter first name"
+            />
+        </div>
+
+        <!-- Form group for the password input -->
+        <div class="form-group">
+            <!-- Label for the password input field -->
+            <label for="password">Password</label>
+            <!-- Input field for the password -->
+            <input
+                type="password" 
+                class="form-control" 
+                id="password1" 
+                name="password1"
+                placeholder="Enter password"
+            />
+        </div>
+
+        <!-- Form group for the confirm password input -->
+        <div class="form-group">
+            <!-- Label for the confirm password input field -->
+            <label for="password">Confirm Password</label>
+            <!-- Input field for the confirm password -->
+            <input
+                type="password" 
+                class="form-control" 
+                id="password2" 
+                name="password2"
+                placeholder="Re-enter password"
+            />
+        </div>
+
+        <!-- Line break for spacing -->
+        <br />
+        <!-- Submit button for the form -->
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+{% endblock %}

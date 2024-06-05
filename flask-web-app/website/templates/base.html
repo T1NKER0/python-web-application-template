@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<!-- Declares the document to be HTML5 -->
+<html>
+  <!-- Root element of the HTML document -->
+  <head>
+    <!-- Contains meta-information, links to stylesheets, and the document title -->
+    
+    <!-- Specifies UTF-8 character encoding -->
+    <meta charset="utf-8" />
+    <!-- Makes the page responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <!-- Links to Bootstrap CSS for styling -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Links to Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      crossorigin="anonymous"
+    />
+
+    <!-- Title block to be dynamically replaced by child templates -->
+    <title>{% block title %}Home{% endblock %}</title>
+  </head>
+  
+  <!-- Contains the content of the HTML document -->
+  <body>
+    <!-- Navigation bar using Bootstrap classes -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <!-- Button for collapsing navbar on small screens -->
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbar"
+      >
+        <!-- Icon for the navbar toggler button -->
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- Collapsible part of the navbar -->
+      <div class="collapse navbar-collapse" id="navbar">
+        <!-- Container for navigation links -->
+        <div class="navbar-nav">
+         <!-- Conditional statement for authenticated users -->
+         {% if user.is_authenticated %}
+          <!-- Link for authenticated users (Home and Logout) -->
+          <a class="nav-item nav-link" id="home" href="/">Home</a>
+          <a class="nav-item nav-link" id="logout" href="/logout">Logout</a>
+        {% else %}
+          <!-- Links for non-authenticated users (Login and Sign Up) -->
+          <a class="nav-item nav-link" id="login" href="/login">Login</a>
+          <a class="nav-item nav-link" id="signUp" href="/sign-up">Sign Up</a>
+        {% endif %}
+        </div>
+      </div>
+    </nav>
+
+    <!-- Block to handle flash messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    <!-- Check if there are messages -->
+    {% if messages %}
+       <!-- Loop through messages -->
+       {% for category, message in messages %}
+       <!-- Style error messages as red alerts -->
+       {% if category == 'error' %}
+       <div class="alert alert-danger alert-dismissable fade show" role="alert">
+          {{ message }}
+          <!-- Button to close the alert -->
+          <button type="button" class="close" data-dismiss="alert">
+            <span aria-hidden="true">&times;</span>
+          </button>
+       </div>
+       {% else %}
+       <!-- Style other messages as green alerts -->
+       <div class="alert alert-success alert-dismissable fade show" role="alert">
+        {{ message }}
+        <!-- Button to close the alert -->
+        <button type="button" class="close" data-dismiss="alert">
+          <span aria-hidden="true">&times;</span>
+        </button>
+     </div>
+       {% endif %}
+       {% endfor %}
+       {% endif %}
+    {% endwith %}
+
+    <!-- Container for main content, to be filled dynamically -->
+    <div class="container">{% block content %} {% endblock %}</div>
+    
+    <!-- External JavaScript libraries for jQuery, Popper.js, and Bootstrap's JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Popper.js library for tooltips and popovers -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Bootstrap JavaScript library -->
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
