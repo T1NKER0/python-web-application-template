@@ -1,4 +1,4 @@
-# Web Application Template
+## Web Application Template
 
 This web application template is built using Flask, a lightweight and flexible web framework for Python. It incorporates various web and database technologies to create a dynamic and interactive web experience.
 
